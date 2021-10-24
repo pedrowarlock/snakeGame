@@ -4,6 +4,8 @@
   --header-wave-img: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381 76.2" preserveAspectRatio="none"><g fill="%23325e6f"><path d="M381 76.2l-12.7-8.47c-12.7-8.46-38.1-25.4-63.5-28.23-25.4-2.72-50.8 8.39-76.2 5.66-25.4-2.83-50.8-19.76-76.2-18.36-25.4 1.51-50.8 21.09-76.2 28.23-25.4 7.15-50.8 1.33-63.5-1.4L0 50.8V0h381z"/><path d="M381 67.73l-12.7-4.23c-12.7-4.23-38.1-12.7-63.5-12.7s-50.8 8.47-76.2 7.06c-25.4-1.5-50.8-12.62-76.2-11.3-25.4 1.33-50.8 15.62-76.2 21.17-25.4 5.56-50.8 2.91-63.5 1.4L0 67.74V0h381z" opacity=".66"/></g></svg>'); 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 
 /* GAME-CONTENT */
 #canvas{
@@ -17,7 +19,7 @@
 /* HEADER */
 .header-content{
   width: 100%;
-  height: 55px;
+  height: 7vh;
   background-color: #325e6f;
   
   font-weight: bold;
@@ -42,7 +44,7 @@
     
     .header-items{
         width: 70%;
-        height: 55px;
+        /* height: 55px; */
         display: flex;
         justify-content: space-between;
     }
@@ -73,7 +75,7 @@
 .shapedividers_com-2438{
     overflow:hidden;
     position:relative;
-    height: 20px;
+    height: 2vh;
     }
     .shapedividers_com-2438::before{
     content:'';
@@ -104,15 +106,14 @@
 /* SITE-CONTENT */
 .site-content{
     display: flex;
-    height: 65vh;
+    height: 70vh;
     justify-content: center;
 }
 
 /* FOOTER  */
 .footer-tags{
-  
-  height: 23vh;
-  background-color: #325e6f;
+  height:18vh;
+    background-color: #325e6f;
 }
   /* .footer-tags{
     display: flex;
@@ -148,7 +149,7 @@
   .shapedividers_com-8121{
     overflow:hidden;
     position:relative;
-    height: 30px;
+    height: 3vh;
   }
   
   .shapedividers_com-8121::before{ 
