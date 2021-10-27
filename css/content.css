@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: 'dogica';
-  src: url('../fonts/dogica.ttf')  format('truetype');
+    src: url('/snakeGame/fonts/dogica.ttf')  format('truetype');
 }
 
 
