@@ -6,20 +6,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
+.pointer {cursor: pointer;}
+
+
+@font-face {
+  font-family: 'dogica';
+  src: url('/fonts/dogica.ttf')  format('truetype');
+}
+
 
 /* GAME-CONTENT */
-#canvas{
+.game-snake{
   background-color: #325e6f;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(2, 78, 240);
+  border-color: rgb(0, 0, 0);
+  width:  min(400px,15vh + 15vw);
+  height: min(400px,15vh + 15vw);
 }
 
 
 /* HEADER */
 .header-content{
   width: 100%;
-  height: 7vh;
+  height: 52px;
   background-color: #325e6f;
   
   font-weight: bold;
@@ -37,7 +47,7 @@
   }
 
   .header-content a:hover{
-      color: indianred;
+      color: rgb(194, 118, 118);
   }
 
 
@@ -50,25 +60,37 @@
     }
     
     .header-links{
-       display: flex;
-       align-items: center;
-       gap: 1rem;
-       padding-top: 18px;
-    }
-    .header-items p{
-        padding-top: 18px;
+      display: flex;
+      gap: 1rem;
+      font-family: 'Roboto', sans-serif;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1vw;
     }
 
     .header-logo{
-        width: 300px;
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
+    }
+
+
+    .header-logo i{
+      padding-top: 1vw;
+      font-size: max(1.8vw ,20px);
+    }
+
+    .header-logo h1{
+      padding-top: 1vw;
+      font-size: max(1.8vw ,20px);
+      font-family: 'dogica';
+      
+      letter-spacing: -5px;
     }
 
     .logo-img{
-        width: 50px;
-        height: 50px;
+        width: max(2vw ,45px);
+        height: max(2vw ,45px);
         padding-top: 5px;
     }
 
@@ -106,14 +128,63 @@
 /* SITE-CONTENT */
 .site-content{
     display: flex;
-    height: 70vh;
+    height: 71.4vh;
     justify-content: center;
+    align-items: center;
 }
 
 /* FOOTER  */
-.footer-tags{
+footer{
+  width: 100%;
   height:18vh;
-    background-color: #325e6f;
+  
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-tags{
+  display: flex;
+  height: 15vh;
+  background-color: #325e6f;
+  justify-content:center;  
+  align-items: center;
+  gap: 1vw;
+}
+
+.footer-tags i{
+  color: rgb(32, 60, 219);
+  padding-top: 1px;
+  margin-right: 3px;
+}
+
+.btn-play{
+  position:absolute;
+}
+.btn-buttom{  
+  display: flex;
+  background-color: aliceblue;
+  width: max(1vw ,200px);
+  height: max(1vw, 50px);
+  
+  border-radius: 10px;
+  border: 4px solid #887e7e;
+  border-bottom: 8px solid #887e7e;  
+
+  padding-top: 6px;  
+  justify-content: center;
+
+
+  text-align: center;
+vertical-align: middle;
+
+  font-family: 'Roboto', sans-serif;  
+  font-size: max(20px, 1vw);
+  font-weight: bold;
+}
+
+.btn-buttom:hover{
+  border-bottom: 4px solid #887e7e;  
+  /* padding-top: 2px; */
 }
   /* .footer-tags{
     display: flex;

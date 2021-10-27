@@ -16,6 +16,9 @@ direction = 'RIGHT';
 
 // carregar o canvas
 let canvas = document.getElementById('canvas');
+if(!canvas){
+    alert("Canvas não identificado!");
+}
 let ctx = canvas.getContext('2d');
 
 // criar o objeto snake
@@ -64,6 +67,7 @@ class Snake {
     }
 
     checkHit() {
+        //comida
         if(snakePosition[snakePosition.length - 1].x === foodX && snakePosition[snakePosition.length - 1].y === foodY){
             foodX = Math.floor(Math.random() * 20) * 20;
             foodY = Math.floor(Math.random() * 20) * 20;
@@ -72,6 +76,7 @@ class Snake {
                 y:snakePosition[0].y
             })
         }
+        //parede
         if(snakePosition[snakePosition.length - 1].x >= w 
             || snakePosition[snakePosition.length - 1].x < 0 
             || snakePosition[snakePosition.length - 1].y >= h 
@@ -80,7 +85,6 @@ class Snake {
             snakePosition = [
                 {x:20, y:20},
                 {x:40, y:20},
-
             ]
             direction = 'RIGHT';
         }
@@ -96,8 +100,8 @@ class Snake {
 
     init() {
         this.checkHit();
-        this.draw()
-        this.walk()
+        this.draw();
+        this.walk();
     }
 
 }
@@ -108,9 +112,11 @@ class Comida {
         this.foodX = foodX;
         this.foodY = foodY;
     }
-    draw(){
-        ctx.fillStyle = "white";
+
+     draw(){
+        ctx.fillStyle = "#C27676";
         ctx.fillRect(foodX, foodY, 20, 20);
+        // ctx.drawImage(document.getElementById("scream"), foodX, foodY, 20,20);
     }
 }
 
@@ -136,14 +142,14 @@ newSnake = new Snake(snakePosition, x, y, direction, w, h, foodX, foodY);
 newComida = new Comida();
 
 // funcao para atualizar requestKeyFrame()
-function init(){
+function initGame(){
     newSnake.init();
     newComida.draw();
 }
 
+
 setInterval(() => {
-    ctx.clearRect(0,0,400,400)
-    init()
+    ctx.clearRect(0,0,400,400)         
+    initGame()
 }, 300)
 
-init()

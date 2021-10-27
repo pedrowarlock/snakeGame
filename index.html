@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnakeGame</title>
     <link rel="icon" type="image/png" href="./imgs/favicon.ico"/>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="./js/snake-game.js"></script>
 </head>
 <body>
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/content.css">
+  <img id="scream" src="./imgs/fruit.png" style="display: none;">
+  
 
     <header>
         <div class="header-content">
             
             <div class="header-items">
-                <div class="header-logo">
-                    <img class="logo-img" src="./imgs/logo-snake.png" alt="">
-                    <p>Snake Game</p>                    
-                </div>
-                
+                <a href="#" class="header-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>Snake Game</h1>      
+                </a>
+                                
                 <div class="header-links">
                     <a href="#">Ranking</a>
                     <a href="#">Tutorial</a>
@@ -30,9 +35,11 @@
         <div class="shapedividers_com-2438"></div>
         
     </header>
-
-    <div class="site-content">
-        <canvas id="canvas" width="400" height="400"></canvas>
+    
+    <div class="site-content">  
+        <button class="btn-buttom btn-play pointer" onclick="playng()">PLAY</button>   
+        <i class="rodando"></i>     
+        <canvas id="canvas" class="game-snake" width="400" height="400"></canvas>
     </div>
 
 
@@ -41,25 +48,22 @@
         
         <div class="footer-tags">
 
-                <!-- <div class="inf-tag"> 
-                    <h2>Navegue no site</h2></br>
-                    <a href="#">Capa</a></li></br>
-                    <a href="#">História</a></li></br>
-                    <a href="#">Seja um colaborarador</a></li> </br>
-                    <a href="#">Quem somos</a></li>
-                </div> 
-                <div class="inf-tag"> 
-                    <h2>Fique conectado !</h2></br>
-                    <a href="#">Email</a></br>
-                    <a href="#">Twitter</a></br>
-                    <a href="#">Youtube</a></br>
-                    <a href="#">Facebook</a>
-                </div>             -->
+                <button class="btn-buttom pointer">
+                    <i class="fab fa-paypal"></i>
+                    Contribuir
+                </button>   
+                <button class="btn-buttom pointer">
+                    <i class="fab fa-github"></i>
+                    Repositório
+                </button>   
+
         </div>
             
 
     </footer>
-    <script src="./js/snake-game.js"></script>
+
+   
+    
 </body>
 </html>
 
