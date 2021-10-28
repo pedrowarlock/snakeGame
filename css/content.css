@@ -235,9 +235,6 @@ body {
   color: var(--button-text-color);
 }
 
-
-
-
 /* PLAY BUTTOM */
 
 .btn-buttom-play {
@@ -271,21 +268,18 @@ body {
   color: var(--button-text-color);
 }
 
-
 #game-btn-content {
-  position: absolute;  
-  display: grid ;
+  position: absolute;
+  display: grid;
   width: min(400px, 28vh + 28vw);
   height: min(400px, 28vh + 28vw);
-
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
-#game-over-text{
+#game-over-text {
   font-size: min(8.9em, 34px);
   color: white;
   font-family: var(--font-logo);
-  
 }

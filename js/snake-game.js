@@ -1,10 +1,10 @@
 let playng = false;
 let score = 0;
 
-function startPlay(){
+function startPlay() {
     playng = !playng;
-    if (playng){
-        document.getElementById("game-btn-content").style.display = 'none';        
+    if (playng) {
+        document.getElementById("game-btn-content").style.display = 'none';
     }
 }
 
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
         { x: 40, y: 20 },
     ]
 
-    foodX = Math.floor(Math.random() * 20) * 20;
-    foodY = Math.floor(Math.random() * 20) * 20;
+    foodX = Math.floor(Math.random() * 40) * 20;
+    foodY = Math.floor(Math.random() * 40) * 20;
     w = 800, h = 800;
-    x = 20,  y = 20;
+    x = 20, y = 20;
     direction = 'RIGHT';
 
     // carregar o canvas
@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(() => {
         ctx.clearRect(0, 0, 800, 800)
-        if(playng){
+        if (playng) {
             initGame()
-        
-               
+
+
         }
-    }, 300)
+    }, 100)
 
 
 
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", function () {
             //comida
             if (snakePosition[snakePosition.length - 1].x === foodX && snakePosition[snakePosition.length - 1].y === foodY) {
 
-                foodX = Math.floor(Math.random() * 20) * 20;
-                foodY = Math.floor(Math.random() * 20) * 20;
+                foodX = Math.floor(Math.random() * 40) * 20;
+                foodY = Math.floor(Math.random() * 40) * 20;
                 snakePosition.unshift({
                     x: snakePosition[0].x,
                     y: snakePosition[0].y
@@ -102,20 +102,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             //parede
-            if (snakePosition[snakePosition.length - 1].x >= w    || snakePosition[snakePosition.length - 1].x < 0
+            if (snakePosition[snakePosition.length - 1].x >= w || snakePosition[snakePosition.length - 1].x < 0
                 || snakePosition[snakePosition.length - 1].y >= h || snakePosition[snakePosition.length - 1].y < 0) {
 
                 ctx.clearRect(0, 0, 800, 800)
-                foodX = Math.floor(Math.random() * 20) * 20;
-                foodY = Math.floor(Math.random() * 20) * 20;
+                foodX = Math.floor(Math.random() * 40) * 20;
+                foodY = Math.floor(Math.random() * 40) * 20;
                 snakePosition = [
                     { x: 20, y: 20 },
                     { x: 40, y: 20 },
                 ]
                 direction = 'RIGHT';
                 playng = false;
-                document.getElementById("game-btn-content").style.display = 'grid';      
-                document.getElementById("game-over-text").innerHTML="GAME OVER! <br><br> SCORE: " + score;
+                document.getElementById("game-btn-content").style.display = 'grid';
+                document.getElementById("game-over-text").innerHTML = "GAME OVER! <br><br> SCORE: " + score;
                 score = 0;
             }
 
@@ -131,10 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         init() {
             this.checkHit();
-            if(!playng) return;           
+            if (!playng) return;
 
             this.draw();
-            this.walk();            
+            this.walk();
         }
 
     }
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         draw() {
-            if(!playng) return;     
+            if (!playng) return;
             ctx.fillStyle = "#C27676";
             ctx.fillRect(foodX, foodY, 20, 20);
             // ctx.drawImage(document.getElementById("fruit"), foodX, foodY, 20,20);
@@ -159,11 +159,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const keyName = event.key;
         if (keyName === 'ArrowDown' && direction !== 'UP') {
             direction = 'DOWN';
-        }else if (keyName === 'ArrowUp' && direction !== 'DOWN') {
+        } else if (keyName === 'ArrowUp' && direction !== 'DOWN') {
             direction = 'UP';
-        }else if (keyName === 'ArrowLeft' && direction !== 'RIGHT') {
+        } else if (keyName === 'ArrowLeft' && direction !== 'RIGHT') {
             direction = 'LEFT';
-        }else if (keyName === 'ArrowRight' && direction !== 'LEFT') {
+        } else if (keyName === 'ArrowRight' && direction !== 'LEFT') {
             direction = 'RIGHT';
         }
     });
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     newSnake = new Snake(snakePosition, x, y, direction, w, h, foodX, foodY);
     newComida = new Comida();
 
-   
+
     // funcao para atualizar requestKeyFrame()
     function initGame() {
         newSnake.init();
