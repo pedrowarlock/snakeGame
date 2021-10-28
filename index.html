@@ -1,71 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnakeGame</title>
-    <link rel="icon" type="image/png" href="./imgs/favicon.ico"/>
+    <link rel="icon" type="image/png" href="./imgs/favicon.ico" />
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="./js/snake-game.js"></script>
 </head>
+
 <body>
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/content.css">
-  <img id="scream" src="./imgs/fruit.png" style="display: none;">
-  
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/content.css">
+    <img id="fruit" src="./imgs/fruit.png" style="display: none;">
 
     <header>
         <div class="header-content">
-            
-            <div class="header-items">
                 <a href="#" class="header-logo">
                     <i class="fas fa-gamepad"></i>
-                    <h1>Snake Game</h1>      
+                    <h1>Snake Game</h1>
                 </a>
-                                
+
+            <!-- <div class="header-items">
+
+
                 <div class="header-links">
                     <a href="#">Ranking</a>
                     <a href="#">Tutorial</a>
                 </div>
-            </div>
+            </div> -->
+
+        </div>
+        <div class="header-wave"></div>
+
+    </header>
+
+    <div class="site-content">
+        <div id="game-btn-content">
+            <i id="game-over-text">Snake Game</i>
+            <button class="btn-buttom-play" onclick="startPlay()">
+                <i class="fas fa-play"></i>
+            </button>
         
         </div>
-        <div class="shapedividers_com-2438"></div>
-        
-    </header>
-    
-    <div class="site-content">  
-        <button id="playbuttom" class="btn-buttom btn-play pointer" onclick="startPlay()">PLAY</button>   
-        <i class="rodando"></i>     
-        <canvas id="canvas" class="game-snake" width="400" height="400"></canvas>
+        <i class="rodando"></i>
+        <canvas id="canvas" class="game-snake" width="800" height="800"></canvas>
     </div>
 
 
-    <footer>
-        <div class="shapedividers_com-8121"></div>
-        
+    <footer class="footer">
+        <div class="footer-wave"></div>
+
         <div class="footer-tags">
 
-                <button class="btn-buttom pointer">
-                    <i class="fab fa-paypal"></i>
-                    Contribuir
-                </button>   
-                <button class="btn-buttom pointer">
+            <a href="https://www.paypal.com/donate?business=LM82GUKD399XL&no_recurring=0&currency_code=BRL" target="_blank">
+            <button class="btn-buttom">
+                <i class="fab fa-paypal"></i>
+                Contribute
+            </button>
+            </a>
+
+            <a href="https://github.com/pedrowarlock/snakeGame" target="_blank">
+                <button class="btn-buttom">
                     <i class="fab fa-github"></i>
-                    Repositório
-                </button>   
+                    Repository                
+                </button>
+            </a>
+
+            
 
         </div>
-            
 
     </footer>
 
-    
-    
 </body>
 </html>
-
-
-
