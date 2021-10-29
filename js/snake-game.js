@@ -1,10 +1,14 @@
 let playng = false;
 let score = 0;
 
+let audioPlay = new Audio('/sounds/startgame.wav');
+audioPlay.volume = 0.1;
 function startPlay() {
     playng = !playng;
+    
     if (playng) {
-        document.getElementById("game-btn-content").style.display = 'none';
+        document.getElementById("game-btn-content").style.display = 'none';        
+        audioPlay.play();
     }
 }
 
@@ -12,6 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     let x, y, w, h, snakePosition, direction, newSnake, newComida, foodX, foodY;
+    let audioFruit = new Audio('/sounds/fruit.wav');
+    audioFruit.volume = 0.1;
+    let audioGameover = new Audio('/sounds/gameover.wav');
+    audioGameover.volume = 0.1;
 
     snakePosition = [
         { x: 20, y: 20 },
@@ -98,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     y: snakePosition[0].y
                 })
                 score++;
-
+                audioFruit.play();
             }
 
             //parede
@@ -117,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("game-btn-content").style.display = 'grid';
                 document.getElementById("game-over-text").innerHTML = "GAME OVER! <br><br> SCORE: " + score;
                 score = 0;
+                audioGameover.play();
             }
 
             let snakePositionCopy = snakePosition.concat()
