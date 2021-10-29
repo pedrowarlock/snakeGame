@@ -1,7 +1,7 @@
 let playng = false;
 let score = 0;
 
-let audioPlay = new Audio('/sounds/startgame.wav');
+let audioPlay = new Audio('/snakeGame//sounds/startgame.wav');
 audioPlay.volume = 0.1;
 function startPlay() {
     playng = !playng;
@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     let x, y, w, h, snakePosition, direction, newSnake, newComida, foodX, foodY;
-    let audioFruit = new Audio('/sounds/fruit.wav');
+    let audioFruit = new Audio('/snakeGame//sounds/fruit.wav');
     audioFruit.volume = 0.1;
-    let audioGameover = new Audio('/sounds/gameover.wav');
+    let audioGameover = new Audio('/snakeGame//sounds/gameover.wav');
     audioGameover.volume = 0.1;
 
     snakePosition = [
